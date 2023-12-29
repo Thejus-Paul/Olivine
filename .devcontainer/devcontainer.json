@@ -11,11 +11,11 @@
 			"version": "18",
 			"nvmVersion": "latest"
 		},
-		"ghcr.io/devcontainers-contrib/features/redis-homebrew:1": {
-			"version": "latest"
-		},
 		"ghcr.io/itsmechlark/features/postgresql:1": {
 			"version": "14"
+		},
+		"ghcr.io/itsmechlark/features/redis-server:1": {
+			"version": "7"
 		}
 	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
@@ -24,11 +24,12 @@
 	// This can be used to network with other containers or the host.
 	"forwardPorts": [
 		3000,
-		5432
+		5432,
+		6379
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "bundle install && rake db:setup",
-	"postCreateCommand": "service postgresql start",
+	"postCreateCommand": "service postgresql start && service redis start",
 	// Configure tool-specific properties.
 	// "customizations": {},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
