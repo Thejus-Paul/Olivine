@@ -1,0 +1,46 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "name": "Installing Ruby Dependencies",
+      "command": "bundle install"
+    },
+    {
+      "name": "Installing Node Dependencies",
+      "command": "yarn install"
+    },
+    {
+      "name": "Installing Dependencies",
+      "command": "./bin/setup"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "rails": {
+      "name": "Start development server",
+      "command": "bundle exec rails s -b 0.0.0.0",
+      "runAtStart": true,
+      "preview": {
+        "port": 3000
+      }
+    },
+    "webpack": {
+      "name": "Start webpack server",
+      "command": "./bin/webpacker-dev-server",
+      "runAtStart": true,
+      "preview": {
+        "port": 8014
+      }
+    },
+    "sidekiq": {
+      "name": "Start sidekiq server",
+      "command": "bundle exec sidekiq -C config/sidekiq.yml",
+      "runAtStart": true
+    },
+    "ruby:typecheck": {
+      "name": "Typecheck",
+      "command": "solargraph typecheck"
+    }
+  }
+}
