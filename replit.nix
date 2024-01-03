@@ -1,9 +1,9 @@
 { pkgs }: {
   deps = [
+    pkgs.postgresql_14
     pkgs.redis
-    pkgs.postgresql_13
     pkgs.yarn
-    pkgs.ruby_3_1
-    pkgs.rubyPackages_3_1.solargraph
+    pkgs.ruby_3_2
+    pkgs.rubyPackages_3_2.solargraph
   ];
 }
