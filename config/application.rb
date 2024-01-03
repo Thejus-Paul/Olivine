@@ -23,6 +23,8 @@ module Olivine
     config.action_mailer.deliver_later_queue_name = :mailers
     config.active_job.queue_adapter = :sidekiq
 
+    config.hosts << "3jxnl2-3000.csb.app"
+
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
